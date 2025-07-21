@@ -27,8 +27,11 @@ An android application built with Kotlin and Jetpack Compose using MVVM/MVI arch
 
 | Comments List, Imagee picker & Refresh | Error case | Orientation Change |
 |----------------------------------------| ------- |------- |
-| main screen  - video                       | [error-message-handling.webm](https://github.com/user-attachments/assets/29f4337e-65f5-46a7-bb13-0fbe63855a8e)    | [orientation-change.webm](https://github.com/user-attachments/assets/019b9cfd-7948-49e0-9462-b9c1dade40bb)   |
-| main screen - photo                    | <img width="376" height="789" alt="image" src="https://github.com/user-attachments/assets/f5f52d45-6d70-4b6d-8e83-83c4ac6be31a" /> | <img width="789" height="376" alt="image" src="https://github.com/user-attachments/assets/0b2c009d-6427-47be-9b77-197bd38dbe99" />|
+| [comments-photos-and-refresh.webm](https://github.com/user-attachments/assets/57252ae4-1965-4ac9-ad35-cb4b539671e8) | [Error Handling.webm](https://github.com/user-attachments/assets/288f2d45-dceb-4407-bfed-a677ce851978)    | [orientation-change.webm](https://github.com/user-attachments/assets/019b9cfd-7948-49e0-9462-b9c1dade40bb)   |
+|<img width="376" height="789" alt="image" src="https://github.com/user-attachments/assets/61b2a27b-b531-4e74-99a3-d3ee56a0ea0e" /> | <img width="376" height="789" alt="image" src="https://github.com/user-attachments/assets/f5f52d45-6d70-4b6d-8e83-83c4ac6be31a" /> | <img width="789" height="376" alt="image" src="https://github.com/user-attachments/assets/0b2c009d-6427-47be-9b77-197bd38dbe99" />|
+
+
+
 
 
 
