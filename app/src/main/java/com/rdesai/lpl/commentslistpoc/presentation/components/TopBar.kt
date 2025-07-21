@@ -1,9 +1,9 @@
 package com.rdesai.lpl.commentslistpoc.presentation.components
 
 import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
@@ -47,19 +47,23 @@ fun TopBar(modifier: Modifier = Modifier, isRefreshing: Boolean, onRefresh: () -
 
 @Composable
 fun RefreshIconSpinning(isLoading: Boolean, onRefresh: () -> Unit) {
-    val infiniteTransition = rememberInfiniteTransition()
-    val rotation by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = 360f,
-        animationSpec = infiniteRepeatable(
-            tween(durationMillis = 800, easing = LinearEasing)
-        )
+    val rotation by animateFloatAsState(
+        targetValue = if (isLoading) 360f else 0f,
+        animationSpec = if (isLoading)
+            infiniteRepeatable(
+                animation = tween(800, easing = LinearEasing),
+                repeatMode = RepeatMode.Restart
+            )
+        else
+            tween(0), // no animation when not loading
+        label = "Refresh Rotation"
     )
+
     IconButton(onClick = onRefresh, enabled = !isLoading) {
         Icon(
             imageVector = Icons.Default.Refresh,
             contentDescription = "Refreshing",
-            modifier = if (isLoading) Modifier.rotate(rotation) else Modifier
+            modifier = Modifier.rotate(rotation)
         )
     }
 }
