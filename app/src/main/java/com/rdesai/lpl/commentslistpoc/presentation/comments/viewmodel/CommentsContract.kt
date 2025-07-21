@@ -16,7 +16,7 @@ sealed class CommentsViewState {
 sealed class CommentsEvent {
     object ShowRefreshing : CommentsEvent()
     object HideRefreshing : CommentsEvent()
-    data class ShowError(val message: String) : CommentsEvent()
+    data class ShowMessage(val message: String) : CommentsEvent()
     data class OpenImagePicker(val commentId: Int) : CommentsEvent()
 }
 

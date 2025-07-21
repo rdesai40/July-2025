@@ -60,7 +60,7 @@ fun CommentsListScreen(
                     currentCommentId = event.commentId
                     imagePickerLauncher.launch("image/*")
                 }
-                is CommentsEvent.ShowError -> {
+                is CommentsEvent.ShowMessage -> {
                     snackbarHostState.showSnackbar(event.message)
                 }
 

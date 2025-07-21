@@ -72,7 +72,7 @@ fun CommentCard(
                         text = comment.name,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
-                        maxLines = 2,
+                        maxLines = Int.MAX_VALUE,
                         overflow = TextOverflow.Ellipsis
                     )
                     Text(

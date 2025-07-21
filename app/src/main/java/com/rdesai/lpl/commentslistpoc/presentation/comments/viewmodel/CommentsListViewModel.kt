@@ -50,7 +50,7 @@ class CommentsListViewModel @Inject constructor(val repository: CommentsReposito
             } catch (e: Exception) {
                 val errorMessage = e.message ?: "Something went wrong, please try again later"
                 _viewState.value = CommentsViewState.Error(errorMessage)
-                _events.send(CommentsEvent.ShowError(errorMessage))
+                _events.send(CommentsEvent.ShowMessage(errorMessage))
             }
         }
     }
@@ -68,9 +68,10 @@ class CommentsListViewModel @Inject constructor(val repository: CommentsReposito
                         profileImages = getCurrentProfileImages()
                     )
                 }
+                _events.send(CommentsEvent.ShowMessage("Refresh successful| Your comments has been updated"))
             } catch (e: Exception) {
                 val errorMessage = e.message ?: "Refresh failed, please try again later"
-                _events.send(CommentsEvent.ShowError(errorMessage))
+                _events.send(CommentsEvent.ShowMessage(errorMessage))
             } finally {
                 _events.send(CommentsEvent.HideRefreshing)
             }
